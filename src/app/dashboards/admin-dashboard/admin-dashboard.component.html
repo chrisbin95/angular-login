@@ -1,0 +1,176 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">&#9656; Welcome Admin</div>
+    <ul class="menu">
+      <li class="active">Dashboard</li>
+      <li>Manage Users / Companies</li>
+      <li>Orders</li>
+      <li>Services / Products</li>
+      <li>Payments / Revenue</li>
+      <li>Reports & Analytics</li>
+      <li>Notifications / Messages</li>
+      <li>Settings</li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+<header class="navbar">
+  <div class="nav-left">
+    <div class="nav-icons">
+      <!-- Envelope / Messages -->
+      <div class="icon-wrapper" (click)="toggleMessages()">
+        <i class="fa fa-envelope"></i>
+        <span class="badge">{{messages.length}}</span>
+        <!-- Messages dropdown -->
+        <div class="dropdown" *ngIf="showMessages">
+          <ul>
+            <li *ngFor="let msg of messages">
+              <strong>{{msg.sender}}:</strong> {{msg.text}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bell / Notifications -->
+      <div class="icon-wrapper" (click)="toggleNotifications()">
+        <i class="fa fa-bell"></i>
+        <span class="badge">{{notifications.length}}</span>
+        <!-- Notifications dropdown -->
+        <div class="dropdown" *ngIf="showNotifications">
+          <ul>
+            <li *ngFor="let notif of notifications">
+              {{notif.text}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Profile Dropdown -->
+  <div class="profile-dropdown" (click)="toggleProfile()">
+    <span class="profile-name">Admin</span>
+    <i class="fa fa-caret-down"></i>
+    <div class="dropdown" *ngIf="showProfile">
+      <ul>
+        <li><i class="fa fa-user"></i> Profile</li>
+        <li><i class="fa fa-cog"></i> Settings</li>
+        <li (click)="logout()"><i class="fa fa-sign-out-alt"></i> Logout</li>
+      </ul>
+    </div>
+  </div>
+</header>
+    
+
+    <!-- Stats Cards -->
+    <section class="stats-cards">
+      <div class="card red">Revenue <span>₹84,198</span></div>
+      <div class="card orange">Orders <span>1,254</span></div>
+      <div class="card blue">Companies <span>325</span></div>
+      <div class="card green">Customers <span>5,430</span></div>
+    </section>
+
+    <!-- Analytics Boxes -->
+    <section class="analytics">
+      <div class="box">Profit 82%</div>
+      <div class="box">Pending Orders 46%</div>
+      <div class="box">Active Companies 84%</div>
+      <div class="box">New Customers 55%</div>
+      <div class="box big">Total Users: 30</div>
+    </section>
+
+    <!-- Tables / Forms Placeholders -->
+    <section class="tables-section">
+      <!-- Users / Companies Table -->
+      <div class="table-box">
+        <h3>Manage Users / Companies</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Flower Boutique</td>
+              <td>flower&#64;example.com</td>
+              <td>+91 9876543210</td>
+              <td>Boutique</td>
+              <td>Active</td>
+              <td>
+                <button>Edit</button>
+                <button>Suspend</button>
+              </td>
+            </tr>
+            <!-- Repeat rows dynamically using Angular *ngFor -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Orders Table -->
+      <div class="table-box">
+        <h3>Orders</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Company</th>
+              <th>Service</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1023</td>
+              <td>John Doe</td>
+              <td>Flower Boutique</td>
+              <td>Flower Delivery</td>
+              <td>₹1,200</td>
+              <td>Pending</td>
+              <td>03-Oct-2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Services / Products Table -->
+      <div class="table-box">
+        <h3>Services / Products</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Service Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Availability</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rose Bouquet</td>
+              <td>Flowers</td>
+              <td>₹500</td>
+              <td>Available</td>
+              <td>
+                <button>Edit</button>
+                <button>Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>

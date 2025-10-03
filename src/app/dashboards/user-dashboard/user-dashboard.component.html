@@ -1,0 +1,121 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">&#9656; Welcome {{ username }}</div>
+    <ul class="menu">
+      <li class="active">Dashboard</li>
+      <li>My Services <span class="badge">{{ services.length }}</span></li>
+      <li>Add New Service</li>
+      <li>Orders <span class="badge">{{ totalOrders }}</span></li>
+      <li>Revenue <span class="badge">₹{{ totalRevenue() }}</span></li>
+      <li>Notifications <span class="badge">{{ notifications.length }}</span></li>
+      <li>Profile / Settings</li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <header class="navbar">
+      <div class="nav-left">
+        <div class="nav-icons">
+          <!-- Messages -->
+          <div class="icon-wrapper" (click)="toggleMessages($event)">
+            <i class="fa fa-envelope"></i>
+            <span class="badge">{{ messages.length }}</span>
+            <div class="dropdown" *ngIf="showMessages">
+              <ul>
+                <li *ngFor="let msg of messages">
+                  <strong>{{ msg.sender }}:</strong> {{ msg.text }}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Notifications -->
+          <div class="icon-wrapper" (click)="toggleNotifications($event)">
+            <i class="fa fa-bell"></i>
+            <span class="badge">{{ notifications.length }}</span>
+            <div class="dropdown" *ngIf="showNotifications">
+              <ul>
+                <li *ngFor="let notif of notifications">
+                  {{ notif.text }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Profile Dropdown -->
+      <div class="profile-dropdown" (click)="toggleProfile($event)">
+        <span class="profile-name">{{ username }}</span>
+        <i class="fa fa-caret-down"></i>
+        <div class="dropdown" *ngIf="showProfile">
+          <ul>
+            <li><i class="fa fa-user"></i> Profile</li>
+            <li (click)="logout()"><i class="fa fa-sign-out-alt"></i> Logout</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats Cards -->
+    <section class="stats-cards">
+      <div class="card red">Total Revenue <span>₹{{ totalRevenue() }}</span></div>
+      <div class="card orange">Orders Received <span>{{ totalOrders }}</span></div>
+      <div class="card blue">Active Services <span>{{ activeServices() }}</span></div>
+      <div class="card green">Total Customers <span>{{ totalCustomers }}</span></div>
+    </section>
+
+    <!-- Services Table -->
+    <section class="tables-section">
+      <div class="table-box">
+        <h3>My Service / Product Listings</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Service Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Availability</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let service of services">
+              <td>{{ service.name }}</td>
+              <td>{{ service.category }}</td>
+              <td>
+                <input type="number" [(ngModel)]="service.price" />
+              </td>
+              <td>
+                <select [(ngModel)]="service.availability">
+                  <option value="Available">Available</option>
+                  <option value="Out of Stock">Out of Stock</option>
+                </select>
+              </td>
+              <td>
+                <button (click)="updateService(service)">Update</button>
+                <button (click)="removeService(service)">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Add New Service Form -->
+        <div class="add-service">
+          <h4>Add New Service</h4>
+          <input type="text" placeholder="Service Name" [(ngModel)]="newService.name" />
+          <input type="text" placeholder="Category" [(ngModel)]="newService.category" />
+          <input type="number" placeholder="Price" [(ngModel)]="newService.price" />
+          <select [(ngModel)]="newService.availability">
+            <option value="Available">Available</option>
+            <option value="Out of Stock">Out of Stock</option>
+          </select>
+          <button (click)="addNewService()">Add Service</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

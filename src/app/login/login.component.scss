@@ -1,0 +1,72 @@
+
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px 25px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: url('https://t4.ftcdn.net/jpg/03/10/16/27/360_F_310162798_6hWbaSFgDtWp4AhhaKPlTgAZUDL1c4UY.jpg') no-repeat;
+    background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 2px 2px 3px rgba(0, 24, 49, 0.5);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #007bff;
+    font-size: 28px;
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #00152c;
+    font-weight: 500;
+  }
+
+  input,
+select {
+  display: flex;          /* make them block elements */
+  margin: 0 auto;          /* center horizontally */
+  width: 100%;
+  padding: 12px 0px 12px 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+  }
+}
+
+
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  /* Small screen responsiveness */
+  @media (max-width: 480px) {
+    padding: 20px 15px;
+    h2 {
+      font-size: 24px;
+    }
+  }
+}

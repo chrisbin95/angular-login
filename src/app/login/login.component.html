@@ -1,0 +1,21 @@
+<div class="login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <h2>Login</h2>
+
+    <label>Username</label>
+    <input type="text" formControlName="username" placeholder="Enter username">
+
+    <label>Password</label>
+    <input type="password" formControlName="password" placeholder="Enter password">
+
+    <div class="form-group">
+        <label class="form-label" for="role">Role</label>
+        <select id="role" class="form-select" formControlName="role">
+            <option value="">Select role</option>
+        <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+        </select>
+    </div>
+
+    <button type="submit">Login</button>
+  </form>
+</div>
