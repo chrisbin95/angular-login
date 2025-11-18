@@ -95,6 +95,7 @@ export class UserDashboardComponent {
     sessionStorage.clear(); // optional
 
     // Navigate back to login page
-    this.router.navigate(['/login']);
+      this.router.navigate(['/login'],
+        { replaceUrl: true});
   }
 }

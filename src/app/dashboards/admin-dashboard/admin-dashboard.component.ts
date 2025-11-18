@@ -18,7 +18,9 @@ export class AdminDashboardComponent {
 
   notifications = [
     { text: 'New order received' },
-    { text: 'Revenue report ready' }
+    { text: 'Revenue report ready' },
+    { text: 'New user requests found' },
+    { text: 'Pending user requests for approval' }
   ];
 
   toggleMessages() {
@@ -40,13 +42,14 @@ export class AdminDashboardComponent {
   }
   // Logout function
     constructor(private router: Router) {}
-    logout() {
+    logout(): void {
       // Clear any stored auth/session data
       localStorage.removeItem('authToken'); // or whatever you use
       sessionStorage.clear(); // optional
   
       // Navigate back to login page
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login'],
+        { replaceUrl: true});
     }
 }
 

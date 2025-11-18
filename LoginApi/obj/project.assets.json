@@ -674,11 +674,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Chrisbin Thomas\\Desktop\\git_works\\dashboard\\login\\LoginApi\\LoginApi.csproj",
+      "projectUniqueName": "C:\\Users\\Chrisbin Thomas\\Desktop\\git_works\\dashboard\\angular-login\\LoginApi\\LoginApi.csproj",
       "projectName": "LoginApi",
-      "projectPath": "C:\\Users\\Chrisbin Thomas\\Desktop\\git_works\\dashboard\\login\\LoginApi\\LoginApi.csproj",
+      "projectPath": "C:\\Users\\Chrisbin Thomas\\Desktop\\git_works\\dashboard\\angular-login\\LoginApi\\LoginApi.csproj",
       "packagesPath": "C:\\Users\\Chrisbin Thomas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Chrisbin Thomas\\Desktop\\git_works\\dashboard\\login\\LoginApi\\obj\\",
+      "outputPath": "C:\\Users\\Chrisbin Thomas\\Desktop\\git_works\\dashboard\\angular-login\\LoginApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Chrisbin Thomas\\AppData\\Roaming\\NuGet\\NuGet.Config"

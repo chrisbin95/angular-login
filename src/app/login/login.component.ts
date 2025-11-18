@@ -33,26 +33,32 @@ export class LoginComponent {
       this.authService.login(loginData).subscribe({
         next: (res) => {
           console.log('Login success:', res);
+          // 💡 ADD: Show a success message
+          alert('Login Successful! Redirecting...');
 
-          // save user data in localStorage (or sessionStorage)
-          localStorage.setItem('user', JSON.stringify(res));
+          // 💡 Best Practice: Store essential auth data using the service
+          this.authService.setAuthData(res); 
 
-          // redirect based on role
-          if (res.role === 'admin') {
+          // Redirect based on role
+          const userRole = res.role ? res.role.toLowerCase() : '';
+          
+          if (userRole === 'admin') {
             this.router.navigate(['/admin-dashboard']);
-          } else if (res.role === 'user') {
+          } else if (userRole === 'user') {
             this.router.navigate(['/user-dashboard']);
-          } else {
+          } else if (userRole === 'guest') {
             this.router.navigate(['/guest-dashboard']);
+          } else {
+            this.errorMessage = "Invalid role received from the server.";
           }
         },
         error: (err) => {
           console.error('Login error:', err);
-          this.errorMessage = 'Invalid username or password';
+          this.errorMessage = 'Invalid credentials. Please check your username and password.';
         }
       });
     } else {
       this.errorMessage = 'Please fill all fields!';
     }
-  }
+  } 
 }

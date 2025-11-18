@@ -19,9 +19,9 @@ namespace LoginApi.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] User user)
         {
-            var existingUser = await _db.GetUserAsync(user.Username, user.Password);
+            var existingUser = await _db.GetUserAsync(user.Username, user.Password, user.Role);
             if (existingUser == null)
-                return Unauthorized(new { message = "Invalid username or password" });
+                return Unauthorized(new { message = "Invalid username or password." });
 
             return Ok(existingUser);
         }
