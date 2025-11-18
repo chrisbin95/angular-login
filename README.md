@@ -1,10 +1,16 @@
-# Login
+# [Angular+MySQL+.NET] Login page with Role based eCommerce dashboard
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
 
+## Login page
+![Preview Image](https://raw.githubusercontent.com/chrisbin95/angular-login/refs/heads/React/screenshots/Screenshot_19-11-2025_0324_localhost.jpeg)
 ## Admin Dashboard
+![Preview Image](https://raw.githubusercontent.com/chrisbin95/angular-login/refs/heads/React/screenshots/Screenshot_18-11-2025_22815_localhost.jpeg)
+## User Dashboard
+![Preview Image](https://raw.githubusercontent.com/chrisbin95/angular-login/refs/heads/React/screenshots/Screenshot_18-11-2025_22946_localhost.jpeg)
+## Guest Dashboard
+![Preview Image](https://raw.githubusercontent.com/chrisbin95/angular-login/refs/heads/React/screenshots/Screenshot_18-11-2025_22110_localhost.jpeg)
 
-![Preview Image]([https://raw.githubusercontent.com/chrisbin95/Portfolio/Code_Space/portfolio-preview.png](https://raw.githubusercontent.com/chrisbin95/angular-login/refs/heads/React/screenshots/Screenshot_18-11-2025_22815_localhost.jpeg))
 
 ## Development server
 
